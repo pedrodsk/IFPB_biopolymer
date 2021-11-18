@@ -1,0 +1,43 @@
+#include <pic.h>
+int x = 0;
+
+#INT_TIMER2
+void  TIMER2_isr(void) 
+{
+x= x+1;
+//output_toggle(pin_A5);
+if(x == 10) {//800ms
+output_toggle(pin_A5);
+x=0;
+}
+}
+
+void main()
+{
+
+   enable_interrupts(INT_TIMER2);
+   enable_interrupts(GLOBAL);
+   setup_timer_2(T2_DIV_BY_16,249,10);      //800 us overflow, 8,0 ms interrupt
+   output_high(pin_b0);
+   output_high(pin_b1)
+   output_high(pin_b2);
+   output_high(pin_b3);
+   output_high(pin_b4);
+   output_high(pin_b5);
+   output_high(pin_b6);
+   output_high(pin_b7);
+   
+   output_low(pin_c0);
+   output_low(pin_c1);
+   output_low(pin_c2);
+   output_low(pin_c3);
+   output_low(pin_c4);
+   output_low(pin_c5);
+   output_low(pin_c6);
+   output_low(pin_c7);
+   while(TRUE)
+   {
+      input(PIN_A0)   
+   }
+
+}

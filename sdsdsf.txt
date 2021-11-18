@@ -1,0 +1,37 @@
+sizeA = [19 inf];
+t = datetime();
+t = datestr(t);
+fileID = fopen('C:\Users\Pedro\Google Drive\Pedro\ifpb\software\tempo.txt','a+');
+fprintf(fileID,'%s\r\n',t);
+fclose(fileID);
+
+
+ fileID = fopen('C:\Users\Pedro\Google Drive\Pedro\ifpb\software\sensor1.txt','r','n','UTF-8');
+ A = fscanf(fileID,'%d %f\r\n');
+ fclose(fileID);
+ A'
+
+
+
+
+fileID = fopen('C:\Users\Pedro\Google Drive\Pedro\ifpb\software\sensor1.txt','a+');
+fprintf(fileID,'%d %f\r\n',x,ppmM);
+fclose
+
+
+s = strcat(Mt(1,15),Mt(1,16),Mt(1,17),Mt(1,18),Mt(1,19));
+
+
+
+Mt(1,:)
+[Mi(:,1) Mppm(:,1) Mt(1,:)]
+
+fileID = fopen('C:\Users\Pedro\Google Drive\Pedro\ifpb\software\teste.txt','a+');
+fprintf(fileID,'#############  %d  #############\r\n\n',Mi(:,1));
+fprintf(fileID,'%s\r\n',Mt(1,:));
+fprintf(fileID,'%f\r\n',Mppm(:,1));
+fprintf(fileID,'################################\r\n\n');
+
+
+
+fclose(fileID);

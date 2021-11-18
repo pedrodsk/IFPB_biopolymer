@@ -1,0 +1,81 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     x
+017     a
+018     b
+019     c
+01A     d
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000096  TIMER2_isr
+0000AC  MAIN
+0000AC  @cinit1
+0000C4  @cinit2
+
+Project Directory:
+    C:\Users\Pedro\Google Drive\Pedro\ifpb\software\pic\
+
+Project Files:
+    pic.c                                                   [01-abr-17 09:01  CRC=04F44E2E]
+    pic.h                                                   [13-mar-17 17:54  CRC=621A0733]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F252.h [03-jul-13 13:28  CRC=B1A95D51]
+
+Source signature=CA611003
+
+Units:
+    pic (main)
+
+Compiler Settings:
+    Processor:      PIC18F252
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   pic.xsym
+    Errors:      pic.err
+    Ext Symbols: pic.esym
+    INHX32:      pic.hex
+    Symbols:     pic.sym
+    List:        pic.lst
+    Debug/COFF:  pic.cof
+    Project:     pic.ccspjt
+    Call Tree:   pic.tre
+    Statistics:  pic.STA

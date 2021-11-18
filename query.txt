@@ -1,0 +1,114 @@
+SELECT `reator 1`.id ,`umidade`.umidade, `reator 1`.hour,`reator 1`.ppm ,`reator 2`.ppm,`reator 3`.ppm,`reator 4`.ppm,`reator 5`.ppm,`reator 6`.ppm,`reator 7`.`ppm`,`reator 8`.ppm,`reator 9`.ppm,`reator 10`.ppm,`reator 11`.ppm,`reator 12`.ppm,`reator 12`.hour 
+FROM `reator 1`
+INNER JOIN `reator 2` ON `reator 1`.id = `reator 2`.id
+INNER JOIN `reator 3` ON `reator 1`.id = `reator 3`.id
+INNER JOIN `reator 4` ON `reator 1`.id = `reator 4`.id
+INNER JOIN `reator 5` ON `reator 1`.id = `reator 5`.id
+INNER JOIN `reator 6` ON `reator 1`.id = `reator 6`.id
+INNER JOIN `reator 7` ON `reator 1`.id = `reator 7`.id
+INNER JOIN `reator 8` ON `reator 1`.id = `reator 8`.id
+INNER JOIN `reator 9` ON `reator 1`.id = `reator 9`.id
+INNER JOIN `reator 10` ON `reator 1`.id = `reator 10`.id
+INNER JOIN `reator 11` ON `reator 1`.id = `reator 11`.id
+INNER JOIN `reator 12` ON `reator 1`.id = `reator 12`.id
+INNER JOIN `umidade` ON `reator 1`.id = `umidade`.id
+WHERE `reator 1`.id >= 95 AND `reator 1`.id <= 115;
+
+SELECT `reator 1`.id,`reator 1`.hour,`reator 2`.hour,`reator 3`.hour,`reator 4`.hour,`reator 5`.hour,`reator 6`.hour,`reator 7`.hour,`reator 8`.hour,`reator 9`.hour,`reator 10`.hour,`reator 11`.hour,`reator 12`.hour 
+FROM `reator 1`
+INNER JOIN `reator 2` ON `reator 1`.id = `reator 2`.id
+INNER JOIN `reator 3` ON `reator 1`.id = `reator 3`.id
+INNER JOIN `reator 4` ON `reator 1`.id = `reator 4`.id
+INNER JOIN `reator 5` ON `reator 1`.id = `reator 5`.id
+INNER JOIN `reator 6` ON `reator 1`.id = `reator 6`.id
+INNER JOIN `reator 7` ON `reator 1`.id = `reator 7`.id
+INNER JOIN `reator 8` ON `reator 1`.id = `reator 8`.id
+INNER JOIN `reator 9` ON `reator 1`.id = `reator 9`.id
+INNER JOIN `reator 10` ON `reator 1`.id = `reator 10`.id
+INNER JOIN `reator 11` ON `reator 1`.id = `reator 11`.id
+INNER JOIN `reator 12` ON `reator 1`.id = `reator 12`.id;
+
+
+DELETE FROM `reator 1` WHERE `reator 1`.`id` = 3;
+DROP TABLE `reator 1`;
+DROP TABLE `reator 2`;
+DROP TABLE `reator 3`;
+DROP TABLE `reator 4`;
+DROP TABLE `reator 5`;
+DROP TABLE `reator 6`;
+DROP TABLE `reator 7`;
+DROP TABLE `reator 8`;
+DROP TABLE `reator 9`;
+DROP TABLE `reator 10`;
+DROP TABLE `reator 11`;
+DROP TABLE `reator 12`;
+DROP TABLE `umidade`;
+
+SET IDENTITY_INSERT `reator 1` ON
+INSERT INTO `reator 1` (id, name) VALUES (1, 'MNO')
+SET IDENTITY_INSERT `reator 1` OFF
+
+ALTER TABLE `umidade` AUTO_INCREMENT=100;
+ALTER TABLE `reator 1` AUTO_INCREMENT=100;
+ALTER TABLE `reator 2` AUTO_INCREMENT=100;
+ALTER TABLE `reator 3` AUTO_INCREMENT=100;
+ALTER TABLE `reator 4` AUTO_INCREMENT=100;
+ALTER TABLE `reator 5` AUTO_INCREMENT=100;
+ALTER TABLE `reator 6` AUTO_INCREMENT=100;
+ALTER TABLE `reator 7` AUTO_INCREMENT=100;
+ALTER TABLE `reator 8` AUTO_INCREMENT=100;
+ALTER TABLE `reator 9` AUTO_INCREMENT=100;
+ALTER TABLE `reator 10` AUTO_INCREMENT=100;
+ALTER TABLE `reator 11` AUTO_INCREMENT=100;
+ALTER TABLE `reator 12` AUTO_INCREMENT=100;
+
+INSERT INTO `reator 1`(`ppm0`, `ppm`) VALUES ('0','0');
+
+DELETE FROM `reator 1` WHERE `reator 1`.`id` > 90;
+DELETE FROM `reator 2` WHERE `reator 2`.`id` > 90;
+DELETE FROM `reator 3` WHERE `reator 3`.`id` > 90;
+DELETE FROM `reator 4` WHERE `reator 4`.`id` > 90;
+DELETE FROM `reator 5` WHERE `reator 5`.`id` > 90;
+DELETE FROM `reator 6` WHERE `reator 6`.`id` > 90;
+DELETE FROM `reator 7` WHERE `reator 7`.`id` > 90;
+DELETE FROM `reator 8` WHERE `reator 8`.`id` > 90;
+DELETE FROM `reator 9` WHERE `reator 9`.`id` > 90;
+DELETE FROM `reator 10` WHERE `reator 10`.`id` > 90;
+DELETE FROM `reator 11` WHERE `reator 11`.`id` > 90;
+DELETE FROM `reator 12` WHERE `reator 12`.`id` > 90;
+DELETE FROM `umidade` WHERE `umidade`.`id` > 90;
+
+devcon hwids *
+devcon restart Port_#0002.Hub_#0004
+C:\Program Files (x86)\Windows Kits\10\Tools\x64
+PID_0043
+PID_7523
+
+UPDATE `reator 11` SET `id` = '13' WHERE `reator 11`.`id` = 12
+
+UPDATE `umidade` SET `id` = '95' WHERE `umidade`.`id` = 96;
+UPDATE `umidade` SET `id` = '96' WHERE `umidade`.`id` = 97;
+UPDATE `umidade` SET `id` = '97' WHERE `umidade`.`id` = 98;
+UPDATE `umidade` SET `id` = '98' WHERE `umidade`.`id` = 99;
+UPDATE `umidade` SET `id` = '99' WHERE `umidade`.`id` = 100;
+ALTER TABLE `umidade` AUTO_INCREMENT=99;
+
+INSERT INTO `matlab2`.`config` (dias,delaywarmup,delaygas,delayflush,delayflushv1,bt1,bt2) VALUES (1,7,7,7,7,'SAAB','HC-06');
+
+CREATE TABLE `matlab2`.`config` (
+ `id` int(4) NOT NULL AUTO_INCREMENT,
+ `dias` int(4) NOT NULL,
+ `bt1` varchar(10) NOT NULL,
+ `bt2` varchar(10) NOT NULL,
+ `delaywarmup` int(4) NOT NULL,
+ `delaygas` int(4) NOT NULL,
+ `delayflush` int(4) NOT NULL,
+ `delayflushv1` int(4) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+SELECT * FROM `matlab2`.`config` WHERE 1
+
+SELECT * FROM `matlab`.`Reator 12` WHERE ID = (SELECT MAX(id) FROM `matlab`.`Reator 12`);
+
+UPDATE `matlab2`.`config` SET delaywarmup=2,delaygas=2,delayflush=2,delayflushv1=2,bt1='a',bt2='b' WHERE 1;

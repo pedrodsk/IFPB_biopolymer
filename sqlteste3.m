@@ -1,0 +1,17 @@
+conn = database('Saab Matlab','root','');
+sqlquery = sprintf( 'SELECT * FROM `matlab`.`Reator 12` WHERE ID = (SELECT MAX(id) FROM `matlab`.`Reator 12`);');
+%sqlquery = sprintf( 'SELECT * FROM `matlab2`.`config` WHERE 1;');
+data = select(conn,sqlquery);
+id = table2array(data(1,1));
+dias = table2array(data(1,2));
+bt1 = table2array(data(1,3));
+bt1 = cell2mat(bt1);
+bt2 = table2array(data(1,4));
+bt2 = cell2mat(bt2);
+delaywarmup = table2array(data(1,5));
+delaygas = table2array(data(1,6));
+delayflush = table2array(data(1,7));
+delayflushv1 = table2array(data(1,8));
+%curs = exec(conn,sqlquery);
+%dados = fetch(curs);
+%dados = cell2mat(dados.Data);

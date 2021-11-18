@@ -1,0 +1,169 @@
+/* 06/03/2017 IFPB Controle do mux via matlab
+ *  
+ *  digital 7 - 4
+ *  0 0 0 0 - conv3 conv2 conv1 conv0    
+ *      
+ */
+#include "TimerOne.h"
+#define conv3 7 //laranja
+#define conv2 6 //verde
+#define conv1 5 //amarelo
+#define conv0 4 //azul
+#define sensorUmidade 8
+String str = "";         
+boolean flag1 = false;  
+boolean estado=0;
+
+void setup() {
+  Serial.begin(9600);
+  str.reserve(25);
+  pinMode(13,OUTPUT);
+  pinMode(conv0, OUTPUT);
+  pinMode(conv1, OUTPUT);
+  pinMode(conv2, OUTPUT);
+  pinMode(conv3, OUTPUT);
+  pinMode(sensorUmidade, OUTPUT);
+  digitalWrite(sensorUmidade, HIGH);
+  Timer1.initialize(1000000);
+  Timer1.attachInterrupt(leitura); 
+}
+
+void loop() {
+  if (flag1) 
+  {
+    Serial.println(str);
+    
+    if(str == "v1\n")
+    { 
+      mux(0,0,0,1);
+      str = "";
+      flag1 = false;
+    }
+    
+    if(str == "v2\n")
+    { 
+      mux(0,0,1,0);
+      str = "";
+      flag1 = false;
+    }
+    
+    if(str == "v3\n")
+    { 
+      mux(0,0,1,1);
+      str = "";
+      flag1 = false;
+    }
+    
+    if(str == "v4\n")
+    { 
+      mux(0,1,0,0);
+      str = "";
+      flag1 = false;
+    }
+    
+    if(str == "v5\n")
+    { 
+      mux(0,1,0,1);
+      str = "";
+      flag1 = false;
+    }
+    
+    if(str == "v6\n")
+    { 
+      mux(0,1,1,0);
+      str = "";
+      flag1 = false;
+    }
+    
+    if(str == "v7\n")
+    { 
+      mux(0,1,1,1);
+      str = "";
+      flag1 = false;
+    }
+    
+    if(str == "v8\n")
+    { 
+      mux(1,0,0,0);
+      str = "";
+      flag1 = false;
+    }
+    
+    if(str == "v9\n")
+    { 
+      mux(1,0,0,1);
+      str = "";
+      flag1 = false;
+    }
+
+    if(str == "v10\n")
+    { 
+      mux(1,0,1,0);
+      str = "";
+      flag1 = false;
+    }
+
+    if(str == "v11\n")
+    { 
+      mux(1,0,1,1);
+      str = "";
+      flag1 = false;
+    }
+
+    if(str == "v12\n")
+    { 
+      mux(1,1,0,0);
+      str = "";
+      flag1 = false;
+    }
+
+    if(str == "b1\n")
+    { 
+      mux(1,1,0,1);
+      str = "";
+      flag1 = false;
+    }
+   
+  if(str == "b2\n")
+    { 
+      mux(1,1,1,0);
+      str = "";
+      flag1 = false;
+    }
+
+  if(str == "b3\n")
+    { 
+      mux(1,1,1,1);
+      str = "";
+      flag1 = false;
+    }
+        
+  }
+}
+
+void serialEvent() {
+  while (Serial.available()) {
+    char c = (char)Serial.read();
+    str += c;
+    if (c == '\n') {
+      flag1 = true;
+    }
+  }
+}
+
+void mux(boolean x,boolean y,boolean z,boolean t) {
+  digitalWrite(conv3, x);
+  digitalWrite(conv2, y);
+  digitalWrite(conv1, z);
+  digitalWrite(conv0, t);
+ // if(t==0) //debug func
+ //   digitalWrite(13,0);
+ // else
+ //   digitalWrite(13,1);
+}
+
+void leitura() {
+  estado = !estado;
+  digitalWrite(13,estado);
+}
+

@@ -1,0 +1,27 @@
+#include <pic.h>
+int x = 0;
+
+#INT_TIMER2
+void  TIMER2_isr(void) 
+{
+x++;
+//output_toggle(pin_A5);
+if(x == 10) {//800ms
+output_toggle(pin_A5);
+x=0;
+}
+}
+
+void main()
+{
+
+   enable_interrupts(INT_TIMER2);
+   enable_interrupts(GLOBAL);
+   setup_timer_2(T2_DIV_BY_16,249,10);      //800 us overflow, 8,0 ms interrupt
+
+   while(TRUE)
+   {
+      //TODO: User Code
+   }
+
+}

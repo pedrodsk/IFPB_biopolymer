@@ -1,0 +1,24 @@
+[PROJECT]
+Target=pic.hex
+Processor_Text=PIC18F252
+CCSVerions=5.008
+Compiler=PCH
+CCSVersion=5.008
+[Target Data]
+FileList=pic.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\Pedro\Google Drive\Pedro\ifpb\software\pic\
+[C:\Users\Pedro\Google Drive\Pedro\ifpb\software\pic\pic]
+Type=4
+[mru-list]
+1=pic.c
+[Opened Files]
+1=pic.c
+2=
+3=..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F252.h
+4=
+[pic.c]
+Type=4
+[Units]
+Count=1
+1=pic (main)

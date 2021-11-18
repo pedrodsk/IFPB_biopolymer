@@ -1,0 +1,2 @@
+p1 - str2num(get(findobj(gcf,'Tag','tagname'),'String'));
+(set(findobj(gcf,'Tag','result'),'String',d);
